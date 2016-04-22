@@ -3,4 +3,11 @@
     <color name="WHITE">#FFFFFF</color>
     <color name="BLACK">#000000</color>
     <color name="GRAY">#0F0F0F</color>
+   
+    <color name="GRAY_TEXT_SMALL">#e4e4e3</color>
+    <color name="GRAY_GALLERY_BG">#b8b8b8</color>
+    
+     <color name="GREEN">#40a304</color>
+     <color name="GREEN_LITE_BODY_BG">#e9fbe0</color>
+     <color name="GREEN_LITE_COMMENT_BG">#f4fbf1</color>
 </resources>

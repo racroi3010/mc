@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/WHITE"
+    android:background="@color/GREEN_LITE_BODY_BG"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:id="@+id/layout_top"
         android:layout_width="match_parent"
-        android:layout_height="50dp" >
+        android:layout_height="50dp"
+        android:background="@drawable/header_bar" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -20,9 +21,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="MENU"
-                android:textColor="@color/BLACK" />
+                android:background="@drawable/ic_action_reorder"
+                android:gravity="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -35,156 +35,336 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Search"
-                android:textColor="@color/BLACK" />
+                android:background="@drawable/ic_action_search"
+                android:gravity="center" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Friend"
-                android:textColor="@color/BLACK" />
+                android:background="@drawable/ic_social_person_add"
+                android:gravity="center" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="My Page"
-                android:textColor="@color/BLACK" />
+                android:background="@drawable/ic_social_person"
+                android:gravity="center" />
         </LinearLayout>
     </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
         android:id="@+id/layout_body"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" 
-        android:padding="10dp">
+        android:layout_height="match_parent" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/rectangle_stroke"
-                android:layout_marginRight="2dp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
 
             <LinearLayout
+                android:id="@+id/layout_post_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" 
-                android:layout_marginLeft="2dp">
+                android:background="@color/WHITE"
+                android:orientation="vertical" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="VTV 24 Gio"
-                    android:textColor="@color/BLACK"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Thứ 4, Ngày 20-04-2016"
-                    android:textColor="@color/GRAY"
-                    android:textSize="14sp" />
-
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
 
-                    <Button
-                        android:id="@+id/btn_map"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/rectangle_photo"
+                        android:padding="2dp" >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/temp_logo_logo_logo_logo" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:text="Map" />
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="VTV 24 Giờ"
+                            android:textColor="@color/GREEN"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thứ 4, Ngày 20-04-2016"
+                            android:textColor="@color/GRAY_TEXT_SMALL"
+                            android:textSize="12sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+                            <Button
+                                android:id="@+id/btn_map"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/ic_maps_place"
+                                android:onClick="onClick" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_toLeftOf="@id/btn_map"
+                                android:text="Tại nhà chú B\nMỹ Khê, Triệu Trung, Triệu Phong, Quảng Trị"
+                                android:textColor="@color/GRAY_TEXT_SMALL"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                      	android:id="@+id/txt_post_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Bắt quả tang cơ sở sản xuất đậu phụ kém chất lượng, sử dụng phụ gia cấm!!"
+                        android:textColor="@color/BLACK"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/temp_dau_phu_ban" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/temp_dau_phu_ban_1" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/temp_dau_phu_ban_2"
+                            android:scaleType="centerCrop" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/GREEN_LITE_COMMENT_BG"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_toLeftOf="@id/btn_map"
-                        android:text="Tại nhà chú B\nMỹ Khê, Triệu Trung, Triệu Phong, Quảng Trị"
-                        android:textColor="@color/GRAY"
-                        android:textSize="14sp" />
-                </RelativeLayout>
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Like"
+                        android:textColor="@color/GREEN"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Comment"
+                        android:textColor="@color/GREEN"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <TextView 
+
+            <LinearLayout
+                android:id="@+id/layout_post_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bắt quả tang cơ sở sản xuất đậu phụ kém chất lượng, sử dụng phụ gia cấm!!"
-                android:textColor="@color/BLACK"
-                android:textSize="16sp"
-                />           
+                android:background="@color/WHITE"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/rectangle_photo"
+                        android:padding="2dp" >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/temp_dinhduong2" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cách Chọn Cà Chua Sạch"
+                            android:textColor="@color/GREEN"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thứ 4, Ngày 20-04-2016"
+                            android:textColor="@color/GRAY_TEXT_SMALL"
+                            android:textSize="12sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+                            <Button
+                                android:id="@id/btn_map"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/ic_maps_place"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_toLeftOf="@id/btn_map"
+                                android:text="Ý kiến của chuyên gia dinh dưỡng"
+                                android:textColor="@color/GRAY_TEXT_SMALL"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/txt_post_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Cà chua dấm chín bằng hóa chất thường có vỏ đỏ nhưng ruột và hạt xanh, khi nấu không bở. Riêng lớp bột trắng trên quả cà chua, thực chất là thành phần bám dính trong thuốc bảo vệ thực vật. Về nguyên lý, chất này không ảnh hưởng sức khoẻ nếu có thời gian cách ly tốt."
+                        android:textColor="@color/BLACK"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal"
+                    android:padding="5dp" >
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="2dp"
+                        android:background="@drawable/rectangle_photo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rectangle_photo" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rectangle_photo" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/GREEN_LITE_COMMENT_BG"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Like"
+                        android:textColor="@color/GREEN"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Comment"
+                        android:textColor="@color/GREEN"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:orientation="horizontal"
-            >
-            <ImageView 
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rectangle_stroke"
-                android:layout_marginRight="2dp"
-                />
-           	<LinearLayout 
-           	    android:layout_width="match_parent"
-           	    android:layout_height="match_parent"
-           	    android:orientation="vertical"
-           	    android:layout_marginLeft="2dp"
-           	    >
-           	    <ImageView 
-           	        android:layout_width="match_parent"
-           	        android:layout_height="0dp"
-           	        android:layout_weight="1"
-           	        android:background="@drawable/rectangle_stroke"
-           	        android:layout_marginBottom="2dp"
-           	        />
-          	    <ImageView 
-           	        android:layout_width="match_parent"
-           	        android:layout_height="0dp"
-           	        android:layout_weight="1"
-           	        android:layout_marginTop="2dp"
-           	        android:background="@drawable/rectangle_stroke"
-           	        />           	    
-           	</LinearLayout>
-        </LinearLayout>
-        <LinearLayout 
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="5dp"
-            >
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="Like"
-                android:textColor="@color/BLACK"
-                />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="15dp"
-                android:text="Comment"
-                android:textColor="@color/BLACK"
-                />            
-        </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
