@@ -1,16 +1,21 @@
 package net.mealcare.vn;
 
+import net.mealcare.vn.view.LinearLayoutAnimator;
 import net.mealcare.vn.view.MySpannable;
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import android.view.animation.TranslateAnimation;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import android.widget.Toast;
@@ -30,6 +35,7 @@ public class MainActivity extends BaseActivity {
 		
 		addViewMoreText(txtPost1, "Xem Thêm");
 		addViewMoreText(txtPost2, "Xem Thêm");
+		
 		
 		
 		
@@ -75,7 +81,17 @@ public class MainActivity extends BaseActivity {
 			Intent intent = new Intent(mContext, MapActivity.class);
 			startActivity(intent);
 			break;
-
+		case R.id.btn_menu:
+			DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.layout_drawer);
+			drawerLayout.openDrawer(Gravity.LEFT);
+			break;
+		case R.id.btn_search:
+			
+			break;
+		case R.id.layout_restaurant:
+			intent = new Intent(mContext, RestaurantActivity.class);
+			startActivity(intent);
+			break;
 		default:
 			break;
 		}
